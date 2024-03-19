@@ -1,5 +1,5 @@
+const sequelize = require("../sequelize");
 const { DataTypes } = require("sequelize");
-const sequelize = require("../config/database");
 
 const PlayerStat = sequelize.define(
   "PlayerStat",
@@ -10,7 +10,8 @@ const PlayerStat = sequelize.define(
       autoIncrement: true,
     },
     playerId: {
-      type: DataTypes.STRING,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
       allowNull: false,
       unique: true,
     },
@@ -33,5 +34,10 @@ const PlayerStat = sequelize.define(
     underscored: true,
   }
 );
+const syncDatabase = async () => {
+  await sequelize.sync();
+  console.log("Database synchronized.");
+};
+syncDatabase();
 
 module.exports = PlayerStat;
