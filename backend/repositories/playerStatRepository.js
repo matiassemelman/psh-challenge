@@ -1,7 +1,8 @@
-const { PlayerStat } = require("../models");
+const { newPlayerStat } = require("../controllers/playerStatController");
+const { PlayerStat } = require("../models/playerStats");
 
 const createPlayerStat = async (data) => {
-  return await PlayerStat.create(data);
+  return await newPlayerStat(data);
 };
 
 const getPlayerStats = async () => {
