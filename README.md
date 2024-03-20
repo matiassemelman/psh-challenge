@@ -21,11 +21,13 @@ The frontend is located in the `frontend/` folder and is responsible for display
 3. Run `npm install` to install the dependencies.
 4. Create a `.env` file in the `backend/` directory with your MySQL credentials and the database name:
 
+```
 DB_HOST=localhost
 DB_PORT=3306
 DB_USER=root
 DB_PASSWORD=yourpassword
 DB_NAME=yourdatabase
+```
 
 5. Navigate to the `frontend/` directory.
 6. Run `npm install` to install the dependencies.
