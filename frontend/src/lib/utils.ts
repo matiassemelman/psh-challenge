@@ -14,7 +14,7 @@ export function fetchData(
     .then((response) =>
       response.json().then((data) => {
         setPlayers(data);
-        const updatedAt = new Date(data[0].updatedAt);
+        const updatedAt = new Date(data[9].updatedAt);
         const formattedDate = updatedAt
           .toISOString()
           .slice(0, 16)
