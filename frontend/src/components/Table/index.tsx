@@ -1,45 +1,41 @@
-import { Player } from "./../../../types/PlayerType";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { ButtonCSV } from "../Button";
+import { TableProps } from "@/types";
 
-interface Props {
-  players: Player[];
-  lastUpdated: string;
-}
-
-export function TopPlayersTable({ players, lastUpdated }: Props) {
+export function TopPlayersTable({ players, lastUpdated }: TableProps) {
   return (
-    <Table>
-      <TableCaption>Top 10 Players by Score</TableCaption>
-      <TableHeader>
-        <TableRow>
-          <TableHead>Rank</TableHead>
-          <TableHead>Player</TableHead>
-          <TableHead>Score</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {players.map((player, index) => (
-          <TableRow key={player.id}>
-            <TableCell className="font-medium">{index + 1}</TableCell>
-            <TableCell>{player.nickname}</TableCell>
-            <TableCell>{player.score}</TableCell>
+    <div className="mt-3">
+      <h1 className="pl-3 text-xl font-bold">Top 10 Players by Score</h1>
+
+      <Table className="w-1/3">
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-1/3">Rank</TableHead>
+            <TableHead className="w-1/3">Player</TableHead>
+            <TableHead className="w-1/3">Score</TableHead>
           </TableRow>
-        ))}
-      </TableBody>
-      <TableFooter>
-        <TableRow>
-          <TableCell colSpan={3}>Last Updated: {lastUpdated}</TableCell>
-        </TableRow>
-      </TableFooter>
-    </Table>
+        </TableHeader>
+        <TableBody>
+          {players.map((player, index) => (
+            <TableRow key={player.id}>
+              <TableCell className="w-1/3 font-medium">{index + 1}</TableCell>
+              <TableCell className="w-1/3">{player.nickname}</TableCell>
+              <TableCell className="w-1/3">{player.score}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+      <div className="flex gap-8 px-4 pt-4 items-center ">
+        <h3 className="font-bold">Last Updated: {lastUpdated}</h3>
+        <ButtonCSV />
+      </div>
+    </div>
   );
 }

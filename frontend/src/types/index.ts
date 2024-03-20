@@ -3,3 +3,8 @@ export interface Player {
   nickname: string;
   score: number;
 }
+
+export interface TableProps {
+  players: Player[];
+  lastUpdated: string;
+}

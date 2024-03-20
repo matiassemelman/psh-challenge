@@ -20,6 +20,8 @@ const getTopPlayers = async (req, res) => {
       order: [["score", "DESC"]],
       limit: 10,
     });
+    res.setHeader("Access-Control-Allow-Origin", "*");
+
     res.json(topPlayerStats);
   } catch (error) {
     console.error("Error getting top players:", error);
