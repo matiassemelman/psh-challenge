@@ -1,14 +1,14 @@
 const cron = require("node-cron");
 const { generateRandomPlayerStats } = require("../services/playerStatService");
 
-// Definir la tarea programada
+// Define the scheduled task
 const cronJob = cron.schedule("*/5 * * * *", async () => {
   try {
-    // Llamar a la función para generar estadísticas aleatorias de jugadores
+    // Call the function to generate random player statistics
     await generateRandomPlayerStats();
-    console.log("Estadísticas de jugadores generadas exitosamente");
+    console.log("Player statistics generated successfully");
   } catch (error) {
-    console.error("Error al generar estadísticas de jugadores:", error);
+    console.error("Error generating player statistics:", error);
   }
 });
 
