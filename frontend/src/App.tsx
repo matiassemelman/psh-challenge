@@ -15,6 +15,14 @@ function App() {
     setLoading(true);
     fetchPlayers(setPlayers);
     setLoading(false);
+
+    const interval = setInterval(() => {
+      setLoading(true);
+      fetchPlayers(setPlayers);
+      setLoading(false);
+    }, 10000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
