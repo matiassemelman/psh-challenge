@@ -1,4 +1,4 @@
-import { Player } from "@/types/PlayerType";
+import { Player } from "@/types";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
