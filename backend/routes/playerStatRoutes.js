@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const playerStatService = require("../services/playerStatService");
+const playerStatController = require("../controllers/playerStatController");
 
-// router.get("/", playerStatController.getAllPlayerStats);
-// router.get("/top", playerStatController.getTopPlayers);
+router.get("/api/players/top", playerStatController.getTopPlayers);
 
 // New route that creates a player statistic
-router.get("/create", async (req, res) => {
+router.get("/api/players/create", async (req, res) => {
   const newStat = await playerStatService.generateRandomPlayerStat();
   res.json(newStat);
 });

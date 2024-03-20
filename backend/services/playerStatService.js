@@ -1,5 +1,8 @@
 const axios = require("axios");
-const { createPlayerStat } = require("../repositories/playerStatRepository");
+const {
+  createPlayerStat,
+  getTopPlayerStats,
+} = require("../repositories/playerStatRepository");
 
 const generateRandomPlayerStat = async () => {
   try {
@@ -15,6 +18,15 @@ const generateRandomPlayerStat = async () => {
   }
 };
 
+const getTopPlayers = async () => {
+  try {
+    return await getTopPlayerStats();
+  } catch (error) {
+    console.error("Error getting top players: ", error);
+  }
+};
+
 module.exports = {
   generateRandomPlayerStat,
+  getTopPlayers,
 };

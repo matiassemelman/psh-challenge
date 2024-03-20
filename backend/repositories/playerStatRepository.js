@@ -1,23 +1,17 @@
-const { newPlayerStat } = require("../controllers/playerStatController");
-const { PlayerStat } = require("../models/playerStats");
+const PlayerStat = require("../models/playerStats");
 
 const createPlayerStat = async (data) => {
-  return await newPlayerStat(data);
+  return await PlayerStat.create(data);
 };
 
-const getPlayerStats = async () => {
-  return await PlayerStat.findAll();
-};
-
-const getTopPlayerStats = async (limit) => {
+const getTopPlayerStats = async () => {
   return await PlayerStat.findAll({
     order: [["score", "DESC"]],
-    limit,
+    limit: 10,
   });
 };
 
 module.exports = {
   createPlayerStat,
-  getPlayerStats,
   getTopPlayerStats,
 };
