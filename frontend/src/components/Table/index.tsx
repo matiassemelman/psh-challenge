@@ -6,10 +6,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { ButtonCSV } from "../Button";
 import { TableProps } from "@/types";
 
-export function TopPlayersTable({ players, lastUpdated }: TableProps) {
+export function TopPlayersTable({ players }: TableProps) {
   return (
     <div className="mt-3">
       <h1 className="pl-3 text-xl font-bold">Top 10 Players by Score</h1>
@@ -32,10 +31,6 @@ export function TopPlayersTable({ players, lastUpdated }: TableProps) {
           ))}
         </TableBody>
       </Table>
-      <div className="flex gap-8 px-4 pt-4 items-center ">
-        <h3 className="font-bold">Last Updated: {lastUpdated}</h3>
-        <ButtonCSV />
-      </div>
     </div>
   );
 }

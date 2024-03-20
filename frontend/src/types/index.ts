@@ -6,5 +6,4 @@ export interface Player {
 
 export interface TableProps {
   players: Player[];
-  lastUpdated: string;
 }
