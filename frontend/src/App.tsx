@@ -4,7 +4,6 @@ import { TopPlayersTable } from "./components/Table";
 import { useState, useEffect } from "react";
 import { fetchData } from "./lib/utils";
 import { ButtonCSV } from "./components/Button";
-import { handleDownloadCSV } from "./components/Button/utils";
 
 function App() {
   const [players, setPlayers] = useState<Player[]>([]);
@@ -24,12 +23,6 @@ function App() {
 
     return () => clearInterval(interval);
   }, []);
-
-  useEffect(() => {
-    if (players.length > 0) {
-      handleDownloadCSV(players);
-    }
-  }, [players]);
 
   return (
     <>
