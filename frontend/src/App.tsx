@@ -2,7 +2,7 @@ import { Player } from "./types/PlayerType";
 import "./App.css";
 import { TopPlayersTable } from "./components/Table";
 import { useState, useEffect } from "react";
-import { fetchPlayers } from "./lib/utils";
+import { fetchData } from "./lib/utils";
 
 const mockLastUpdated = "2023-06-09T10:30:00Z";
 
@@ -13,12 +13,12 @@ function App() {
 
   useEffect(() => {
     setLoading(true);
-    fetchPlayers(setPlayers);
+    fetchData(setPlayers, setLastUpdated);
     setLoading(false);
 
     const interval = setInterval(() => {
       setLoading(true);
-      fetchPlayers(setPlayers);
+      fetchData(setPlayers);
       setLoading(false);
     }, 10000);
 
