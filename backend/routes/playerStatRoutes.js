@@ -7,7 +7,7 @@ router.get("/api/players/top", playerStatController.getTopPlayers);
 
 // New route that creates a player statistic
 router.get("/api/players/create", async (req, res) => {
-  const newStat = await playerStatService.generateRandomPlayerStat();
+  const newStat = await playerStatService.generateRandomPlayerStats();
   res.json(newStat);
 });
 
