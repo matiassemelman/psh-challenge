@@ -6,12 +6,20 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function fetchPlayers(setPlayers: (players: Player[]) => void) {
+export function fetchData(
+  setPlayers: (players: Player[]) => void,
+  setLastUpdated: (lastUpdated: string) => void
+) {
   return fetch("http://localhost:3000/api/players/top")
     .then((response) =>
       response.json().then((data) => {
-        console.log(data);
         setPlayers(data);
+        const updatedAt = new Date(data[0].updatedAt);
+        const formattedDate = updatedAt
+          .toISOString()
+          .slice(0, 16)
+          .replace("T", " ");
+        setLastUpdated(formattedDate);
       })
     )
 
