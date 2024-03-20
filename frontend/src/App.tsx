@@ -1,15 +1,13 @@
-import { Player } from "./types/PlayerType";
+import { Player } from "./types";
 import "./App.css";
 import { TopPlayersTable } from "./components/Table";
 import { useState, useEffect } from "react";
 import { fetchData } from "./lib/utils";
 
-const mockLastUpdated = "2023-06-09T10:30:00Z";
-
 function App() {
   const [players, setPlayers] = useState<Player[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [lastUpdated, setLastUpdated] = useState<string>(mockLastUpdated);
+  const [lastUpdated, setLastUpdated] = useState<string>("");
 
   useEffect(() => {
     setLoading(true);
@@ -18,7 +16,7 @@ function App() {
 
     const interval = setInterval(() => {
       setLoading(true);
-      fetchData(setPlayers);
+      fetchData(setPlayers, setLastUpdated);
       setLoading(false);
     }, 10000);
 
