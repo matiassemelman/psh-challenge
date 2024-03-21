@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const playerStatService = require("../services/playerStatService");
-const playerStatController = require("../controllers/playerStatController");
+const playerStatController = require("../controllers/controller");
 
 router.get("/api/players/top", playerStatController.getTopPlayers);
 

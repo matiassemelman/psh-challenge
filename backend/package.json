@@ -2,12 +2,12 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "./server/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "connect": "node --env-file .env ./config",
-    "simulate": "node --env-file .env app.js",
-    "dev": "nodemon --env-file .env app.js"
+    "simulate": "node --env-file .env ./server/app.js",
+    "dev": "nodemon --env-file .env ./server/app.js"
   },
   "author": "",
   "license": "ISC",
