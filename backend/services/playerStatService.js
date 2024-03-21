@@ -2,7 +2,7 @@ const axios = require("axios");
 const {
   createPlayerStat,
   getTopPlayerStats,
-} = require("../repositories/playerStatRepository");
+} = require("../middleware/middleware");
 
 const generateRandomPlayerStats = async () => {
   try {

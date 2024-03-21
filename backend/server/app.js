@@ -1,8 +1,8 @@
 const express = require("express");
-const playerStatRoutes = require("./routes/playerStatRoutes");
+const playerStatRoutes = require("../routes/routes");
 const { Sequelize } = require("sequelize");
 
-const cronJob = require("./jobs/cronjob");
+const cronJob = require("../jobs/cronjob");
 cronJob.start();
 
 const app = express();
