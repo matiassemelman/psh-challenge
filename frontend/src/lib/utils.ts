@@ -10,7 +10,7 @@ export function fetchData(
   setPlayers: (players: Player[]) => void,
   setLastUpdated: (lastUpdated: string) => void
 ) {
-  return fetch("http://localhost:3000/api/players/top")
+  return fetch(`${process.env.API_URL}/players/top`)
     .then((response) =>
       response.json().then((data) => {
         setPlayers(data);
