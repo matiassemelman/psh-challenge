@@ -9,7 +9,7 @@ This challenge simulates player statistics and inserts them into a MySQL databas
 1. Clone the repository.
 2. Navigate to the `backend` directory.
 3. Run `npm install` to install the dependencies.
-4. Create a `.env` file in the `backend` directory with your MySQL credentials and database name:
+4. Create a `.env.local` file in the `backend` directory with your MySQL credentials and database name:
 
 ## Usage
 
