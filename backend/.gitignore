@@ -2,8 +2,7 @@
 node_modules
 
 ## dotenv environment variables file
-.env
-.env.test
+.env*
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
