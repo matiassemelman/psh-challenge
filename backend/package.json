@@ -5,9 +5,9 @@
   "main": "./server/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "connect": "node --env-file .env ./config",
-    "simulate": "node --env-file .env ./server/app.js",
-    "dev": "nodemon --env-file .env ./server/app.js"
+    "connect": "node --env-file .env.local ./config",
+    "simulate": "node --env-file .env.local ./server/app.js",
+    "dev": "nodemon --env-file .env.local ./server/app.js"
   },
   "author": "",
   "license": "ISC",
