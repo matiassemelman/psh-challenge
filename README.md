@@ -43,6 +43,12 @@ This project simulates player statistics and inserts them into a MySQL database.
 ### Frontend
 
 1. Run `npm run dev` to start the Vite development server.
+2. Create a `.env` file in the `frontend/` directory with the localhost:
+
+```
+VITE_API_URL=http:localhost:3000/api
+```
+
 2. Open `http://localhost:3000` in your browser to view the user interface.
 
 ## API Documentation
