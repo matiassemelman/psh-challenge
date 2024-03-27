@@ -10,7 +10,7 @@ export function fetchData(
   setPlayers: (players: Player[]) => void,
   setLastUpdated: (lastUpdated: string) => void
 ) {
-  return fetch("http://localhost:3000/api/players/top")
+  return fetch(`${import.meta.env.VITE_API_URL}/players/top`)
     .then((response) =>
       response.json().then((data) => {
         setPlayers(data);
